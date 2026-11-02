@@ -1,5 +1,5 @@
 /* ==========================================================================
-   大里杙鹹菜 - 民國60年代懷舊溫暖風格 (style.css 完整匹配修復版)
+   大里杙鹹菜 - 民國60年代懷舊溫暖風格 (style.css 購物車彈窗修復版)
    ========================================================================== */
 
 :root {
@@ -39,7 +39,7 @@ img {
   display: block;
 }
 
-/* 頂部固定導覽列 */
+/* 頂部固定導覽列 (清晰高對比紅磚底) */
 .navbar {
   background-color: var(--brick-red) !important;
   border-bottom: 4px solid var(--wood-brown);
@@ -332,7 +332,7 @@ img {
   margin-bottom: 8px;
 }
 
-/* 修復截圖問題：「認識鹹菜」頂部故事 Banner 寬度與圖片限制 */
+/* 「認識鹹菜」頂部故事 Banner */
 .history-banner-box {
   background-color: var(--bg-card);
   border: 3px double var(--brick-red);
@@ -359,7 +359,7 @@ img {
   border: 2px solid var(--wood-brown);
 }
 
-/* 修復截圖問題：「認識鹹菜」古法 01-04 四工序橫向並排與圖片高度限制 */
+/* 「認識鹹菜」古法 01-04 四工序橫向並排圖卡 */
 .process-grid {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
@@ -416,7 +416,7 @@ img {
   font-weight: bold;
 }
 
-/* 商品卡片與食譜卡片圖片 220px 裁切設定 */
+/* 商品卡片與食譜卡片圖片 220px 裁切設定 (嚴格約束防爆) */
 .grid-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -497,6 +497,131 @@ img {
   padding-left: 18px;
   margin-top: 10px;
   line-height: 1.7;
+}
+
+/* ==========================================================================
+   購物車與結帳對話框 (Modal) 修復專用 CSS (補齊所有缺失樣式)
+   ========================================================================== */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 38, 37, 0.65);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: var(--bg-warm-paper);
+  border: 3px solid var(--wood-brown);
+  border-radius: 12px;
+  max-width: 550px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.modal-header {
+  background-color: var(--brick-red);
+  color: #FFFFFF;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--wood-brown);
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.cart-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.cart-item-info h4 {
+  font-size: 1.05rem;
+  color: var(--brick-red);
+}
+
+.cart-item-info p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-btn {
+  background-color: var(--wood-brown);
+  color: #FFF;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  border-top: 2px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F6F1E7;
+}
+
+.total-price {
+  font-size: 1.3rem;
+  color: var(--brick-red);
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--wood-brown);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
 /* 全站頁尾 */
