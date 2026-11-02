@@ -1,6 +1,5 @@
 /* ==========================================================================
    大里杙鹹菜 - 民國60年代懷舊溫暖風格 (style.css)
-   視覺亮點：暖杏宣紙色底、古厝紅磚、傳統木桶棕、芥菜綠、豐富圖片框
    ========================================================================== */
 
 :root {
@@ -49,13 +48,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
   letter-spacing: 2px;
 }
@@ -71,15 +72,16 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .nav-btn {
   background: transparent;
   border: 2px solid transparent;
   color: #FFFDF9;
-  padding: 6px 14px;
-  font-size: 1rem;
+  padding: 5px 12px;
+  font-size: 0.95rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s;
@@ -103,7 +105,7 @@ body {
   padding: 0 15px;
 }
 
-/* 首頁 Hero 區塊 (圖片與人情味風格) */
+/* 首頁 Hero 區塊 */
 .hero-section {
   background-color: var(--bg-card);
   border: 3px double var(--brick-red);
@@ -150,15 +152,15 @@ body {
 }
 
 .hero-title {
-  font-size: 2.1rem;
+  font-size: 1.9rem;
   color: var(--brick-red);
   margin-bottom: 12px;
   font-weight: bold;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
   margin-bottom: 20px;
 }
@@ -169,13 +171,13 @@ body {
   align-items: center;
 }
 
-/* 懷舊按鈕與次要連結 */
+/* 按鈕樣式 */
 .btn-primary {
   background-color: var(--brick-red);
   color: #FFF;
   border: 2px solid var(--wood-brown);
   padding: 10px 24px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 6px;
@@ -334,36 +336,46 @@ body {
   cursor: pointer;
 }
 
-/* 食譜頁面卡片 */
+/* 食譜頁面卡片網格 */
 .recipe-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-bottom: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
 }
 
 .recipe-card {
   background-color: var(--bg-card);
   border: 2px dashed var(--wood-brown);
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
-}
-
-.recipe-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(122,75,41,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .recipe-body {
-  padding: 18px;
+  padding: 20px;
 }
 
 .recipe-title {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--pickle-green);
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.recipe-steps {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  padding-left: 18px;
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+.recipe-footer {
+  padding: 0 20px 20px 20px;
 }
 
 /* 頁尾 Footer */
