@@ -1,5 +1,5 @@
 /* ==========================================================================
-   大里杙鹹菜 - 民國60年代懷舊溫暖風格 (style.css 版面填滿與排版重構版)
+   大里杙鹹菜 - 民國60年代懷舊溫暖風格 (style.css 完整匹配修復版)
    ========================================================================== */
 
 :root {
@@ -14,7 +14,7 @@
   --border-color: #8C6F56;     /* 邊框木質色 */
 }
 
-/* 全局重置 */
+/* 全局重置與圖片防爆設定 */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -108,7 +108,7 @@ img {
   border: 2px solid #FFFFFF !important;
 }
 
-/* 主內容區：伸展填滿螢幕，解決留白問題 */
+/* 主內容區 */
 .page-container {
   max-width: 1100px;
   margin: 30px auto;
@@ -124,18 +124,17 @@ img {
   display: block;
 }
 
-/* 首頁 Hero 區塊（填滿高大氣風格） */
+/* 首頁 Hero 區塊 */
 .hero-section {
   background-color: var(--bg-card);
   border: 3px double var(--brick-red);
-  padding: 40px;
+  padding: 35px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(107, 68, 35, 0.1);
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: 35px;
+  gap: 30px;
   align-items: center;
-  min-height: 420px;
 }
 
 @media (max-width: 768px) {
@@ -146,7 +145,7 @@ img {
 
 .hero-img-box {
   width: 100%;
-  height: 340px;
+  height: 300px;
   overflow: hidden;
   border-radius: 8px;
   border: 3px solid var(--wood-brown);
@@ -167,22 +166,22 @@ img {
   font-size: 0.95rem;
   font-weight: bold;
   border-radius: 4px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .hero-title {
-  font-size: 2rem;
+  font-size: 1.9rem;
   color: var(--brick-red);
-  margin-bottom: 18px;
+  margin-bottom: 15px;
   font-weight: 900;
   line-height: 1.4;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  margin-bottom: 25px;
-  line-height: 1.7;
+  margin-bottom: 22px;
+  line-height: 1.6;
 }
 
 .hero-actions {
@@ -191,7 +190,6 @@ img {
   align-items: center;
 }
 
-/* 首頁三核心展示卡（消除留白、增加豐富感） */
 .home-feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -224,7 +222,7 @@ img {
   background-color: var(--brick-red);
   color: #FFFFFF !important;
   border: 2px solid var(--wood-brown);
-  padding: 12px 26px;
+  padding: 10px 22px;
   font-size: 1.05rem;
   font-weight: bold;
   cursor: pointer;
@@ -242,7 +240,7 @@ img {
   background-color: var(--wood-brown);
   color: #FFFFFF !important;
   border: 2px solid var(--wood-brown);
-  padding: 12px 26px;
+  padding: 10px 22px;
   font-size: 1.05rem;
   font-weight: bold;
   cursor: pointer;
@@ -263,7 +261,7 @@ img {
   font-weight: bold;
 }
 
-/* 選購指南對比模組 */
+/* 對比卡片 (選購指南頁) */
 .comparison-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -306,7 +304,7 @@ img {
   font-size: 1rem;
 }
 
-/* 選購指南 4 大原則圖卡 */
+/* 選購指南 4 大避坑原則 */
 .guide-tip-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -334,19 +332,37 @@ img {
   margin-bottom: 8px;
 }
 
-/* 修復圖二：「認識鹹菜」古法四工序 4 欄滿版並排網格 */
-.history-banner {
+/* 修復截圖問題：「認識鹹菜」頂部故事 Banner 寬度與圖片限制 */
+.history-banner-box {
   background-color: var(--bg-card);
-  border: 2px solid var(--wood-brown);
-  border-radius: 10px;
+  border: 3px double var(--brick-red);
   padding: 30px;
+  border-radius: 12px;
   margin-bottom: 35px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 25px;
+  align-items: center;
 }
 
+@media (max-width: 768px) {
+  .history-banner-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+.history-banner-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--wood-brown);
+}
+
+/* 修復截圖問題：「認識鹹菜」古法 01-04 四工序橫向並排與圖片高度限制 */
 .process-grid {
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important; /* 強制四欄並排 */
+  grid-template-columns: repeat(4, 1fr) !important;
   gap: 20px !important;
   margin: 30px 0 40px !important;
   width: 100% !important;
@@ -376,15 +392,16 @@ img {
 
 .process-img-box {
   width: 100%;
-  height: 160px;
+  height: 160px !important;
   overflow: hidden;
   border-bottom: 2px solid var(--wood-brown);
+  background-color: #F3EFE6;
 }
 
 .process-img-box img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 160px !important;
+  object-fit: cover !important;
 }
 
 .process-body {
@@ -394,12 +411,12 @@ img {
 }
 
 .step-num {
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   color: var(--brick-red);
   font-weight: bold;
 }
 
-/* 通用商品/食譜網格 (圖片 220px 統一裁切) */
+/* 商品卡片與食譜卡片圖片 220px 裁切設定 */
 .grid-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -482,7 +499,7 @@ img {
   line-height: 1.7;
 }
 
-/* 全站頁尾（貼合底端） */
+/* 全站頁尾 */
 .footer {
   background-color: var(--wood-brown);
   color: #FDF9F0;
