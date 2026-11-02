@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>甕裡乾坤 - 大里杙古法鹹菜</title>
+    <!-- 引入外接的 CSS 樣式表 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 頂部復古招牌列 -->
+    <header class="vintage-header">
+        <div class="header-container">
+            <h1 class="brand-title">甕裡乾坤</h1>
+            <p class="brand-subtitle">大里杙・古法手作鹹菜</p>
+            <nav class="vintage-nav">
+                <a href="#about">歷史走讀</a>
+                <a href="#shop">嚴選商行</a>
+                <a href="#recipe">古早食譜</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要內容區 -->
+    <main class="vintage-main">
+        
+        <!-- 品牌故事/Hero 區塊 -->
+        <section id="about" class="retro-section">
+            <div class="paper-card">
+                <h2>【 尋找大里杙的百年甕底香 】</h2>
+                <p>
+                    民國四、五十年代，大里曾以「鹹菜王國」名聞全台。冬至時節，家家戶戶於將軍二巷（鹹菜巷）利用大木桶以古法竹編與天然海鹽層層醃漬。
+                    歲月流轉，雖然工業化量產改變了市場，但我們依然堅持老祖宗傳承下來的手路——不用化學添加，只有時間與大木桶慢慢發酵的甘醇。
+                </p>
+            </div>
+        </section>
+
+        <!-- 嚴選商城區塊 -->
+        <section id="shop" class="retro-section">
+            <h2 class="section-title">－ 柑仔店嚴選良品 －</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>古法手作客家酸菜</h3>
+                    <p class="price">特價 NT$ 180</p>
+                    <p class="desc">傳統大木桶發酵，氣味芳香、天然回甘。</p>
+                    <button class="retro-btn" onclick="addToCart('古法手作客家酸菜', 180)">放入竹籃</button>
+                </div>
+                <div class="product-card">
+                    <h3>減鹽開袋即煮包</h3>
+                    <p class="price">特價 NT$ 220</p>
+                    <p class="desc">符合現代人健康低鈉，免洗切直接下鍋。</p>
+                    <button class="retro-btn" onclick="addToCart('減鹽開袋即煮包', 220)">放入竹籃</button>
+                </div>
+                <div class="product-card">
+                    <h3>大里古法鹹菜禮盒</h3>
+                    <p class="price">特價 NT$ 580</p>
+                    <p class="desc">送禮自用兩相宜，重現昔日大里杙風華。</p>
+                    <button class="retro-btn" onclick="addToCart('大里古法鹹菜禮盒', 580)">放入竹籃</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 食譜分享區塊 -->
+        <section id="recipe" class="retro-section">
+            <div class="paper-card">
+                <h2>【 灶咖好滋味：古早味鹹菜鴨湯 】</h2>
+                <p>材料：大里古法鹹菜半包、半隻土鴨肉、老薑片數片、米酒少許。</p>
+                <p>作法：將鹹菜洗淨切段，與汆燙好的鴨肉、薑片一同入鍋慢火燉煮 1 小時，起鍋前加少許米酒。湯頭酸香甘甜，是台中人記憶中最懷念的家鄉味。</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 購物車側邊欄/結帳區 -->
+    <aside class="cart-sidebar">
+        <h3>🛒 您的買菜竹籃</h3>
+        <ul id="cart-items">
+            <li>尚無挑選商品</li>
+        </ul>
+        <div class="cart-total">
+            <span>總計：</span><span id="total-price">NT$ 0</span>
+        </div>
+        <button class="retro-btn checkout-btn" onclick="checkout()">確認結帳取貨</button>
+    </aside>
+
+    <!-- 復古頁尾 -->
+    <footer class="vintage-footer">
+        <p>台灣省台中縣大里鄉（今大里區）將軍二巷 ｜ 傳統手路．代代相傳</p>
+        <p>示範網站：本站為地方文史與地方創生商業網頁展示</p>
+    </footer>
+
+    <!-- 簡單的互動 JavaScript -->
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            total += price;
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const list = document.getElementById('cart-items');
+            const totalSpan = document.getElementById('total-price');
+            if (cart.length === 0) {
+                list.innerHTML = '<li>尚無挑選商品</li>';
+            } else {
+                list.innerHTML = cart.map(item => `<li>${item = item.name} - NT$ ${item.price}</li>`).join('');
+            }
+            totalSpan.innerText = `NT$ ${total}`;
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('您的竹籃是空的唷！');
+            } else {
+                alert(`感謝您的惠顧！總金額 NT$ ${total}，已通知大里老店準備出貨。`);
+                cart = [];
+                total = 0;
+                updateCartUI();
+            }
+        }
+    </script>
+</body>
+</html>
