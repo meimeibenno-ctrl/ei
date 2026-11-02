@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- 全站唯一頂部導覽列 -->
+  <!-- 全站固定頂部導覽列 (超高對比文字) -->
   <header class="navbar">
     <div class="nav-container">
       <div class="brand-logo">
@@ -25,13 +25,15 @@
     </div>
   </header>
 
-  <!-- 主內容容器 (各頁面100%獨立，絕無複製堆疊) -->
+  <!-- 內容主區域 -->
   <main class="page-container">
 
     <!-- PAGE 1: 網站首頁 -->
     <div id="home" class="tab-content active">
       <div class="hero-section">
-        <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" alt="傳統大木桶醃漬" class="hero-img">
+        <div class="hero-img-box">
+          <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" alt="傳統大木桶醃漬">
+        </div>
         <div class="hero-content">
           <span class="hero-tag">百年歷史 ‧ 木桶發酵</span>
           <h1 class="hero-title">歲月慢熟的古法香氣，大里杙鹹菜巷的溫暖手路</h1>
@@ -64,14 +66,16 @@
       </div>
     </div>
 
-    <!-- PAGE 2: 選購指南 (知識導購) -->
+    <!-- PAGE 2: 選購指南 -->
     <div id="guide" class="tab-content">
       <h2 class="section-title">鹹菜挑選與用途指南</h2>
       <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">依據您的下廚習慣，挑選最適合的天然古法鹹菜規格：</p>
       
       <div class="grid-layout">
         <div class="card-item">
-          <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" class="card-img" alt="整株鹹菜">
+          <div class="card-img-box">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="整株鹹菜">
+          </div>
           <div class="card-body">
             <span class="card-tag">適合：家庭燉湯料理</span>
             <h3 class="card-title">整株古法鹹菜</h3>
@@ -83,7 +87,9 @@
         </div>
 
         <div class="card-item">
-          <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=600&q=80" class="card-img" alt="切片便利包">
+          <div class="card-img-box">
+            <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=600&q=80" alt="切片便利包">
+          </div>
           <div class="card-body">
             <span class="card-tag">適合：快炒與飯糰</span>
             <h3 class="card-title">切片便利包 (300g)</h3>
@@ -96,7 +102,7 @@
       </div>
     </div>
 
-    <!-- PAGE 3: 認識鹹菜 (全新深度文化百科) -->
+    <!-- PAGE 3: 認識鹹菜 (文化專區) -->
     <div id="history" class="tab-content">
       <div class="history-banner">
         <span class="hero-tag">百年文化 ‧ 在地記憶</span>
@@ -129,7 +135,7 @@
       </div>
     </div>
 
-    <!-- PAGE 4: 料理食譜 (5道快速家常食譜) -->
+    <!-- PAGE 4: 料理食譜 -->
     <div id="recipes" class="tab-content">
       <h2 class="section-title">60年代古早味快速家常食譜</h2>
       <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">專為忙碌主婦/夫設計，準備簡單、時間短，快速端出好味道！</p>
@@ -139,11 +145,11 @@
           <div class="card-body">
             <span class="card-tag">備時 10 分鐘 ‧ 開胃小菜</span>
             <h3 class="card-title">🍲 1. 經典開胃【辣炒鹹菜絲】</h3>
-            <p class="card-desc"><strong>食材：</strong>鹹菜 1 包、蒜頭、辣椒、少許糖與麻油。</p>
+            <p class="card-desc"><strong>食材：</strong>鹹菜 1 包、蒜頭、辣椒、少許糖與麻油[cite: 1]。</p>
             <ol class="recipe-steps">
-              <li>鹹菜洗淨切細絲；蒜頭拍碎、辣椒切絲。</li>
-              <li>熱鍋爆香蒜末，加入辣椒與鹹菜大火快炒。</li>
-              <li>加 2 匙糖與少許醬油嗆香，起鍋前淋上麻油即可。</li>
+              <li>鹹菜洗淨切細絲；蒜頭拍碎、辣椒切絲[cite: 1]。</li>
+              <li>熱鍋爆香蒜末，加入辣椒與鹹菜大火快炒[cite: 1]。</li>
+              <li>加 2 匙糖與少許醬油嗆香，起鍋前淋上麻油即可[cite: 1]。</li>
             </ol>
           </div>
           <div class="card-footer">
@@ -223,7 +229,9 @@
       
       <div class="grid-layout">
         <div class="card-item">
-          <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" class="card-img" alt="整株鹹菜">
+          <div class="card-img-box">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="整株鹹菜">
+          </div>
           <div class="card-body">
             <span class="card-tag">家庭燉湯首選</span>
             <h3 class="card-title">【傳統木桶】大里手路鹹菜（整株裝）</h3>
@@ -236,7 +244,9 @@
         </div>
 
         <div class="card-item">
-          <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=600&q=80" class="card-img" alt="切片便利包">
+          <div class="card-img-box">
+            <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=600&q=80" alt="切片便利包">
+          </div>
           <div class="card-body">
             <span class="card-tag">快炒飯糰便利</span>
             <h3 class="card-title">【切片便利包】古早味酸菜片（300g）</h3>
@@ -249,7 +259,9 @@
         </div>
 
         <div class="card-item">
-          <img src="https://images.unsplash.com/photo-1506484381205-f7945653044d?auto=format&fit=crop&w=600&q=80" class="card-img" alt="營業桶裝">
+          <div class="card-img-box">
+            <img src="https://images.unsplash.com/photo-1506484381205-f7945653044d?auto=format&fit=crop&w=600&q=80" alt="營業桶裝">
+          </div>
           <div class="card-body">
             <span class="card-tag">B2B 餐飲批發</span>
             <h3 class="card-title">【小吃攤營業用】大里鹹菜桶裝（10kg）</h3>
@@ -265,33 +277,32 @@
 
   </main>
 
-  <!-- 全站唯一頁尾 -->
+  <!-- 全站固定頁尾 -->
   <footer class="footer">
     <div class="footer-stamp">大里杙鹹菜 ‧ 溫暖謹製</div>
     <p>門市體驗：台中市大里區新興路將軍二巷（鹹菜巷）</p>
     <p>© 2026 大里杙鹹菜商業網站設計案</p>
   </footer>
 
-  <!-- 簡單可靠的原生切換腳本 -->
   <script>
     let cartCount = 0;
 
     function switchTab(tabId) {
-      // 隱藏所有分頁內容
+      // 隱藏所有頁面內容
       const contents = document.querySelectorAll('.tab-content');
       contents.forEach(content => content.classList.remove('active'));
 
-      // 顯示目標分頁
+      // 顯示目標頁面
       const targetContent = document.getElementById(tabId);
       if (targetContent) {
         targetContent.classList.add('active');
       }
 
-      // 更新按鈕高亮狀態
+      // 更新導覽按鈕高亮
       const buttons = document.querySelectorAll('.nav-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
       
-      // 平滑滾動至頁面頂端
+      // 平滑滾動到頁首
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
