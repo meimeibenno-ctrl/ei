@@ -1,261 +1,16 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>大里杙鹹菜 - 60年代古法溫暖手路風味</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- 固定頂部導覽列 -->
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="brand-logo">
-        <span>大里杙鹹菜</span>
-        <span class="stamp-badge">傳統古法</span>
-      </div>
+<!-- ... existing code ... -->
       <nav class="nav-links">
         <button class="nav-btn active" onclick="switchTab('home')">網站首頁</button>
         <button class="nav-btn" onclick="switchTab('guide')">選購指南</button>
         <button class="nav-btn" onclick="switchTab('history')">認識鹹菜</button>
         <button class="nav-btn" onclick="switchTab('recipes')">料理食譜</button>
-        <button class="nav-btn cart-btn" onclick="switchTab('shop')">🛒 線上商城 (<span id="cartCount">0</span>)</button>
+        <button class="nav-btn cart-btn" onclick="openCartModal()">🛒 購物車 (<span id="cartCount">0</span>)</button>
       </nav>
     </div>
   </header>
 
   <main class="page-container">
-
-    <!-- PAGE 1: 網站首頁 -->
-    <div id="home" class="tab-content active">
-      <div class="hero-section">
-        <div class="hero-img-box">
-          <img src="https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/68AE03CC-3AD8-4778-955E-1A344A7BCE9F/Derivates/1f829078-ef89-46dd-a000-8ed520d40d40.jpg" alt="大里杙醃漬鹹菜料理">
-        </div>
-        <div class="hero-content">
-          <span class="hero-tag">百年歷史 ‧ 木桶發酵</span>
-          <h1 class="hero-title">歲月慢熟的古法香氣，大里杙鹹菜巷的溫暖手路</h1>
-          <p class="hero-subtitle">重現民國60年代將軍二巷「鹹菜巷」天然醃漬風味。無化學添加，煮湯炒菜的溫馨靈魂夥伴。</p>
-          <div class="hero-actions">
-            <button class="btn-primary" onclick="switchTab('guide')">選購指南 ➔</button>
-            <button class="btn-secondary" onclick="switchTab('shop')">選購大里鹹菜</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="home-feature-grid">
-        <div class="home-feature-card">
-          <div class="home-feature-icon">🪵</div>
-          <h3 class="home-feature-title">百年木桶醃漬</h3>
-          <p class="card-desc">傳承將軍二巷手藝，大木桶踏壓發酵帶有淡淡天然木香。</p>
-        </div>
-        <div class="home-feature-card">
-          <div class="home-feature-icon">🌿</div>
-          <h3 class="home-feature-title">無化學添加</h3>
-          <p class="card-desc">僅用嚴選大芥菜與天然粗鹽，絕無防腐劑與色素，全家安心吃。</p>
-        </div>
-        <div class="home-feature-card">
-          <div class="home-feature-icon">🍲</div>
-          <h3 class="home-feature-title">甘甜酸香回甘</h3>
-          <p class="card-desc">天然乳酸菌慢熟發酵，不死鹹、不刺鼻，燉湯快炒的靈魂夥伴。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- PAGE 2: 選購指南 -->
-    <div id="guide" class="tab-content">
-      <h2 class="section-title">為什麼選擇大里杙古法鹹菜？</h2>
-      <div class="comparison-container">
-        <div class="comp-card highlight">
-          <div class="comp-header" style="color: var(--pickle-green);">🧅 大里杙古法鹹菜</div>
-          <ul class="comp-list">
-            <li>✅ <strong>天然大木桶發酵：</strong>遵循傳統踏壓，帶有淡淡木香。</li>
-            <li>✅ <strong>酸鹹回甘層次：</strong>不死鹹、不刺鼻，煮湯完全釋放甘甜。</li>
-            <li>✅ <strong>無防腐劑添加：</strong>純鹽與時間發酵，全家吃得安心。</li>
-          </ul>
-        </div>
-        <div class="comp-card">
-          <div class="comp-header" style="color: var(--text-muted);">🏭 一般市售量產酸菜</div>
-          <ul class="comp-list">
-            <li>❌ <strong>水泥池快速發酵：</strong>缺乏木桶熟成韻味，風味較單一。</li>
-            <li>❌ <strong>鹹味死板化學酸：</strong>需多次沖洗去鹽，口感容易軟爛。</li>
-            <li>❌ <strong>化學防腐劑添加：</strong>為延長保存期限，常添加防腐劑。</li>
-          </ul>
-        </div>
-      </div>
-
-      <h2 class="section-title">天然鹹菜挑選與避坑指南</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">市場鹹菜千百種，如何挑選無化學添加、真發酵的優質鹹菜？請看以下 4 大實用重點：</p>
-
-      <div class="guide-tip-grid">
-        <div class="guide-tip-card">
-          <div class="guide-tip-icon">👁️</div>
-          <h3 class="guide-tip-title">1. 看自然發酵色澤</h3>
-          <p class="card-desc">天然木桶發酵呈自然金黃色或黃褐色；若顏色過於鮮豔嫩綠，可能經過二氧化硫漂白或人工色素染色。</p>
-        </div>
-        <div class="guide-tip-card">
-          <div class="guide-tip-icon">👃</div>
-          <h3 class="guide-tip-title">2. 聞溫潤酸香氣味</h3>
-          <p class="card-desc">好的鹹菜帶有淡淡乳酸與芥菜清香；若一靠近就有強烈刺鼻化學醋酸味，多為快速酸洗化學製品。</p>
-        </div>
-        <div class="guide-tip-card">
-          <div class="guide-tip-icon">🤏</div>
-          <h3 class="guide-tip-title">3. 摸葉片質感與彈性</h3>
-          <p class="card-desc">古法踏壓發酵的鹹菜，葉片與菜梗保持緊實彈性；過度化學浸泡者往往質地軟爛無口感。</p>
-        </div>
-        <div class="guide-tip-card">
-          <div class="guide-tip-icon">🏷️</div>
-          <h3 class="guide-tip-title">4. 檢查純粹成分表</h3>
-          <p class="card-desc">優質手路鹹菜成分僅有「大芥菜與天然粗鹽」。標籤若出現防腐劑（苯甲酸）、漂白劑則建議避開。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- PAGE 3: 認識鹹菜 -->
-    <div id="history" class="tab-content">
-      <div class="history-banner-box">
-        <img src="https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/68AE03CC-3AD8-4778-955E-1A344A7BCE9F/Derivates/1f829078-ef89-46dd-a000-8ed520d40d40.jpg" alt="鹹菜巷故事" class="history-banner-img">
-        <div>
-          <span class="hero-tag">百年文化 ‧ 在地記憶</span>
-          <h1 class="hero-title" style="margin-bottom: 10px;">大里杙將軍二巷「鹹菜巷」的故事</h1>
-          <p class="hero-subtitle" style="margin-bottom: 0;">大里早期為台灣六大港口之一（一府二鹿三艋舺四竹塹五諸羅六大里杙）。農務冬作之餘，農民廣植大芥菜，並運用傳統大木桶醃漬，造就了全台聞名的鹹菜王國。</p>
-        </div>
-      </div>
-
-      <h2 class="section-title">古法四工序：木桶踏壓的慢功夫</h2>
-      
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="process-img-box">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgqDKvEeXOdWI1UdxY9-Sd2bEsAbjVDp9PGA6ZYjrlF6s88Vnx7LWzYyrB&s=10" alt="日照萎凋">
-          </div>
-          <div class="process-body">
-            <div class="step-num">01. 日照萎凋</div>
-            <p class="card-desc" style="margin-top:8px;">將採收的鮮採大芥菜於陽光下曝曬一日，適度蒸發水分使葉片軟化具有彈性。</p>
-          </div>
-        </div>
-
-        <div class="process-step">
-          <div class="process-img-box">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5foxCylrtyUxUq9niVxmfoky-XMx5F6_iWyiJ97wYDg&s=10" alt="粗鹽殺青">
-          </div>
-          <div class="process-body">
-            <div class="step-num">02. 粗鹽殺青</div>
-            <p class="card-desc" style="margin-top:8px;">均勻撒上天然粗鹽揉搓殺青，透過鹽分滲透破壞細胞壁，釋放出芥菜固有苦澀感。</p>
-          </div>
-        </div>
-
-        <div class="process-step">
-          <div class="process-img-box">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSLrZWtylafoLXTtUp9kxQn95sUeok5gBPUvmWZsOOaZ57Haur9LsKgo0&s=10" alt="木桶踏壓">
-          </div>
-          <div class="process-body">
-            <div class="step-num">03. 木桶踏壓</div>
-            <p class="card-desc" style="margin-top:8px;">師傅踩入傳統大木桶中，手工精準踏壓層層芥菜排出空氣，密實擠出濃郁菜汁。</p>
-          </div>
-        </div>
-
-        <div class="process-step">
-          <div class="process-img-box">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwP8oSSN8XNrNkq56vJrqAq36oVqEVfXpAZLQJAhlkNax4wtRhTJJwUiVO&s=10" alt="重石靜置">
-          </div>
-          <div class="process-body">
-            <div class="step-num">04. 重石靜置</div>
-            <p class="card-desc" style="margin-top:8px;">壓上巨石密封木桶，經 14-21 天自然乳酸菌慢熟發酵，熟成出金黃酸香回甘口感。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PAGE 4: 料理食譜 -->
-    <div id="recipes" class="tab-content">
-      <h2 class="section-title">60年代古早味快速家常食譜</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">專為忙碌主婦/夫設計，準備簡單、時間短，快速端出好味道！</p>
-
-      <div class="grid-layout">
-        <div class="card-item">
-          <div class="card-body">
-            <span class="card-tag">備時 10 分鐘 ‧ 開胃小菜</span>
-            <h3 class="card-title">🍲 1. 經典開胃【辣炒鹹菜絲】</h3>
-            <p class="card-desc"><strong>食材：</strong>鹹菜 1 包、蒜頭、辣椒、少許糖與麻油[cite: 1]。</p>
-            <ol class="recipe-steps">
-              <li>鹹菜洗淨切細絲；蒜頭拍碎、辣椒切絲[cite: 1]。</li>
-              <li>熱鍋爆香蒜末，加入辣椒與鹹菜大火快炒[cite: 1]。</li>
-              <li>加 2 匙糖與少許醬油嗆香，起鍋前淋上麻油即可[cite: 1]。</li>
-            </ol>
-          </div>
-          <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購切片便利包</button>
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-body">
-            <span class="card-tag">備時 25 分鐘 ‧ 暖胃湯品</span>
-            <h3 class="card-title">🍲 2. 暖胃首選【客家鹹菜鴨湯】</h3>
-            <p class="card-desc"><strong>食材：</strong>整株鹹菜半顆、鴨肉塊、薑片 5 片、米酒。</p>
-            <ol class="recipe-steps">
-              <li>鹹菜切段泡水備用；鴨肉川燙去血水。</li>
-              <li>鍋中加水放入鴨肉、薑片與米酒，燉煮 20 分鐘。</li>
-              <li>加入鹹菜段續煮 10 分鐘至香味融合即完成。</li>
-            </ol>
-          </div>
-          <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購整株手路鹹菜</button>
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-body">
-            <span class="card-tag">備時 15 分鐘 ‧ 國民早餐</span>
-            <h3 class="card-title">🍙 3. 懷舊早餐【古早味鹹菜飯糰】</h3>
-            <p class="card-desc"><strong>食材：</strong>切片鹹菜、豬絞肉 50g、蒜末、白飯、油條。</p>
-            <ol class="recipe-steps">
-              <li>熱鍋豬絞肉炒出油，下蒜末與切碎鹹菜拌炒。</li>
-              <li>加糖與胡椒粉炒香至收汁，製成鹹菜肉燥。</li>
-              <li>將白飯鋪上鹹菜肉燥與油條，包成飯糰即完成。</li>
-            </ol>
-          </div>
-          <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購切片便利包</button>
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-body">
-            <span class="card-tag">備時 10 分鐘 ‧ 下飯主菜</span>
-            <h3 class="card-title">🥩 4. 下飯神器【鹹菜炒豬肉片】</h3>
-            <p class="card-desc"><strong>食材：</strong>切片鹹菜、梅花豬肉片 150g、蒜頭、蔥段。</p>
-            <ol class="recipe-steps">
-              <li>豬肉切片，鹹菜洗淨切小片。</li>
-              <li>爆香蒜末與蔥白，下豬肉片拌炒至半熟。</li>
-              <li>放入鹹菜片大火快炒，加少許糖與米酒調味。</li>
-            </ol>
-          </div>
-          <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購切片便利包</button>
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-body">
-            <span class="card-tag">備時 8 分鐘 ‧ 高纖輕食</span>
-            <h3 class="card-title">🥗 5. 清爽解膩【鹹菜炒毛豆仁】</h3>
-            <p class="card-desc"><strong>食材：</strong>鹹菜碎、冷凍毛豆仁、紅蘿蔔丁、蒜末。</p>
-            <ol class="recipe-steps">
-              <li>毛豆仁川燙備用；鹹菜切細碎末。</li>
-              <li>熱鍋爆香蒜末，下紅蘿蔔丁與毛豆仁翻炒。</li>
-              <li>加入鹹菜碎與少許水拌炒 2 分鐘即可起鍋。</li>
-            </ol>
-          </div>
-          <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購切片便利包</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
+<!-- ... existing code ... -->
     <!-- PAGE 5: 線上商城（圖片與標籤已全面更新） -->
     <div id="shop" class="tab-content">
       <h2 class="section-title">大里杙鹹菜線上商城</h2>
@@ -273,7 +28,7 @@
           </div>
           <div class="card-footer">
             <span class="card-price">NT$ 150</span>
-            <button class="btn-primary" onclick="addToCart('整株鹹菜')">加入購物車</button>
+            <button class="btn-primary" onclick="addToCart('【傳統木桶】大里手路鹹菜（整株裝）', 150)">加入購物車</button>
           </div>
         </div>
 
@@ -289,7 +44,7 @@
           </div>
           <div class="card-footer">
             <span class="card-price">NT$ 120</span>
-            <button class="btn-primary" onclick="addToCart('切片便利包')">加入購物車</button>
+            <button class="btn-primary" onclick="addToCart('【切片便利包】古早味酸菜片（300g）', 120)">加入購物車</button>
           </div>
         </div>
 
@@ -305,13 +60,83 @@
           </div>
           <div class="card-footer">
             <span class="card-price">NT$ 1200</span>
-            <button class="btn-primary" onclick="addToCart('10kg桶裝鹹菜')">加入購物車</button>
+            <button class="btn-primary" onclick="addToCart('【小吃攤營業用】大里鹹菜桶裝（10kg）', 1200)">加入購物車</button>
           </div>
         </div>
       </div>
     </div>
 
   </main>
+
+  <!-- 購物車彈窗 Modal -->
+  <div id="cartModalOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:10000; justify-content:center; align-items:center;">
+    <div style="background:#FFFDF9; border:3px solid #6B4423; border-radius:12px; width:90%; max-width:550px; padding:25px; box-shadow:0 10px 30px rgba(0,0,0,0.3); position:relative; max-height:85vh; display:flex; flex-direction:column;">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px dashed #8C6F56; padding-bottom:12px; margin-bottom:15px;">
+        <h3 style="color:#9E2A2B; margin:0; font-size:1.4rem;">🛒 您的選購清單</h3>
+        <button onclick="closeCartModal()" style="background:none; border:none; font-size:1.5rem; cursor:pointer; color:#6B4423; font-weight:bold;">✕</button>
+      </div>
+
+      <div id="cartItemsList" style="overflow-y:auto; flex-grow:1; margin-bottom:15px; padding-right:5px;">
+        <!-- 動態渲染購物車內容 -->
+      </div>
+
+      <div style="border-top:2px solid #8C6F56; padding-top:15px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:1.1rem; font-weight:bold; color:#6B4423;">總計金額：</span>
+          <span id="cartTotalPrice" style="font-size:1.4rem; font-weight:bold; color:#9E2A2B;">NT$ 0</span>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <button onclick="closeCartModal()" style="background:#6B4423; color:#FFF; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:bold;">繼續購物</button>
+          <button onclick="proceedToCheckout()" style="background:#9E2A2B; color:#FFF; border:2px solid #6B4423; padding:8px 18px; border-radius:6px; cursor:pointer; font-weight:bold; box-shadow:2px 2px 0px #6B4423;">前往結帳 ➔</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 結帳填單彈窗 Checkout Modal -->
+  <div id="checkoutModalOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:10001; justify-content:center; align-items:center;">
+    <div style="background:#FFFDF9; border:3px solid #6B4423; border-radius:12px; width:90%; max-width:550px; padding:25px; box-shadow:0 10px 30px rgba(0,0,0,0.3); position:relative; max-height:90vh; overflow-y:auto;">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px dashed #8C6F56; padding-bottom:12px; margin-bottom:15px;">
+        <h3 style="color:#9E2A2B; margin:0; font-size:1.4rem;">📦 填寫訂購人資訊與結帳</h3>
+        <button onclick="closeCheckoutModal()" style="background:none; border:none; font-size:1.5rem; cursor:pointer; color:#6B4423; font-weight:bold;">✕</button>
+      </div>
+
+      <form onsubmit="submitOrder(event)">
+        <div style="margin-bottom:12px;">
+          <label style="display:block; font-weight:bold; color:#2B2625; margin-bottom:4px;">訂購人姓名 *</label>
+          <input type="text" id="buyerName" required placeholder="請輸入收件人姓名" style="width:100%; padding:8px 12px; border:1px solid #8C6F56; border-radius:6px; background:#FFF;">
+        </div>
+
+        <div style="margin-bottom:12px;">
+          <label style="display:block; font-weight:bold; color:#2B2625; margin-bottom:4px;">聯絡電話 *</label>
+          <input type="tel" id="buyerPhone" required placeholder="例：0912-345-678" style="width:100%; padding:8px 12px; border:1px solid #8C6F56; border-radius:6px; background:#FFF;">
+        </div>
+
+        <div style="margin-bottom:12px;">
+          <label style="display:block; font-weight:bold; color:#2B2625; margin-bottom:4px;">配送地址 *</label>
+          <input type="text" id="buyerAddress" required placeholder="請輸入完整的寄送地址" style="width:100%; padding:8px 12px; border:1px solid #8C6F56; border-radius:6px; background:#FFF;">
+        </div>
+
+        <div style="margin-bottom:15px;">
+          <label style="display:block; font-weight:bold; color:#2B2625; margin-bottom:4px;">付款方式 *</label>
+          <select id="paymentMethod" style="width:100%; padding:8px 12px; border:1px solid #8C6F56; border-radius:6px; background:#FFF;">
+            <option value="貨到付款">貨到付款 (宅配到府取貨付款)</option>
+            <option value="超商取貨付款">7-11 / 全家 超商取貨付款</option>
+            <option value="線上信用卡">信用卡線上刷卡</option>
+          </select>
+        </div>
+
+        <div style="background:#F6FAF5; border:1px solid #2D5A27; padding:12px; border-radius:6px; margin-bottom:15px;">
+          <p style="margin:0; font-size:0.95rem; color:#2D5A27; font-weight:bold;">應付總金額：<span id="checkoutTotalAmount" style="font-size:1.2rem; color:#9E2A2B;">NT$ 0</span></p>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:10px;">
+          <button type="button" onclick="closeCheckoutModal()" style="background:#6B4423; color:#FFF; border:none; padding:10px 18px; border-radius:6px; cursor:pointer; font-weight:bold;">返回購物車</button>
+          <button type="submit" style="background:#9E2A2B; color:#FFF; border:2px solid #6B4423; padding:10px 22px; border-radius:6px; cursor:pointer; font-weight:bold; box-shadow:2px 2px 0px #6B4423;">確認下單 ➔</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <!-- 全站頁尾 -->
   <footer class="footer">
@@ -321,7 +146,8 @@
   </footer>
 
   <script>
-    let cartCount = 0;
+    // 購物車數據結構
+    let cartItems = [];
 
     function switchTab(tabId) {
       const contents = document.querySelectorAll('.tab-content');
@@ -338,10 +164,114 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function addToCart(itemName) {
-      cartCount++;
-      document.getElementById('cartCount').innerText = cartCount;
-      alert(`已成功將「${itemName}」加入購物車！`);
+    // 新增至購物車
+    function addToCart(itemName, itemPrice) {
+      const existing = cartItems.find(item => item.name === itemName);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cartItems.push({ name: itemName, price: itemPrice, quantity: 1 });
+      }
+      updateCartUI();
+      openCartModal();
+    }
+
+    // 修改商品數量
+    function changeQuantity(itemName, delta) {
+      const item = cartItems.find(item => item.name === itemName);
+      if (item) {
+        item.quantity += delta;
+        if (item.quantity <= 0) {
+          cartItems = cartItems.filter(i => i.name !== itemName);
+        }
+      }
+      updateCartUI();
+      renderCartModalList();
+    }
+
+    // 更新購物車數量與總價UI
+    function updateCartUI() {
+      const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById('cartCount').innerText = totalCount;
+    }
+
+    // 渲染購物車清單內容
+    function renderCartModalList() {
+      const container = document.getElementById('cartItemsList');
+      const totalPriceEl = document.getElementById('cartTotalPrice');
+      
+      if (cartItems.length === 0) {
+        container.innerHTML = '<p style="text-align:center; color:#665E59; margin:30px 0;">您的購物車目前是空的喔！快去挑選好吃的鹹菜吧。</p>';
+        totalPriceEl.innerText = 'NT$ 0';
+        return;
+      }
+
+      let html = '';
+      let total = 0;
+
+      cartItems.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        html += `
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #E8DEC8; padding:10px 0;">
+            <div style="flex-grow:1; padding-right:10px;">
+              <div style="font-weight:bold; color:#2B2625; font-size:0.95rem;">${item.name}</div>
+              <div style="color:#9E2A2B; font-size:0.9rem;">NT$ ${item.price} / 單價</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <button onclick="changeQuantity('${item.name}', -1)" style="background:#E8DEC8; border:1px solid #8C6F56; width:26px; height:26px; border-radius:4px; font-weight:bold; cursor:pointer;">-</button>
+              <span style="font-weight:bold; min-width:20px; text-align:center;">${item.quantity}</span>
+              <button onclick="changeQuantity('${item.name}', 1)" style="background:#E8DEC8; border:1px solid #8C6F56; width:26px; height:26px; border-radius:4px; font-weight:bold; cursor:pointer;">+</button>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+      totalPriceEl.innerText = `NT$ ${total}`;
+    }
+
+    // 打開購物車彈窗
+    function openCartModal() {
+      renderCartModalList();
+      document.getElementById('cartModalOverlay').style.display = 'flex';
+    }
+
+    // 關閉購物車彈窗
+    function closeCartModal() {
+      document.getElementById('cartModalOverlay').style.display = 'none';
+    }
+
+    // 前往結帳
+    function proceedToCheckout() {
+      if (cartItems.length === 0) {
+        alert('您的購物車內尚無商品！');
+        return;
+      }
+      closeCartModal();
+
+      const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      document.getElementById('checkoutTotalAmount').innerText = `NT$ ${total}`;
+      document.getElementById('checkoutModalOverlay').style.display = 'flex';
+    }
+
+    // 關閉結帳彈窗
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModalOverlay').style.display = 'none';
+    }
+
+    // 提交訂單完成購買
+    function submitOrder(event) {
+      event.preventDefault();
+      const name = document.getElementById('buyerName').value;
+      const orderNum = 'DALI' + Math.floor(100000 + Math.random() * 900000);
+
+      alert(`🎉 感謝您的訂購，${name} 先生/女士！\n\n您的訂單編號為：【${orderNum}】\n我們會儘快準備傳統古法木桶醃漬的精選鹹菜寄出給您！`);
+      
+      // 清空購物車
+      cartItems = [];
+      updateCartUI();
+      closeCheckoutModal();
     }
   </script>
 
