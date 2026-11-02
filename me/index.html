@@ -8,10 +8,10 @@
 </head>
 <body>
 
-  <!-- 固定頂部導覽列 -->
+  <!-- 全站固定頂部導覽列 -->
   <header class="navbar">
     <div class="nav-container">
-      <div class="brand-logo">
+      <div class="brand-logo" onclick="switchTab('home')">
         <span>大里杙鹹菜</span>
         <span class="stamp-badge">傳統古法</span>
       </div>
@@ -25,9 +25,10 @@
     </div>
   </header>
 
+  <!-- 內容主區域 -->
   <main class="page-container">
 
-    <!-- PAGE 1: 網站首頁 (極簡主視覺) -->
+    <!-- PAGE 1: 網站首頁 (極簡主視覺，嚴禁放置對比區塊) -->
     <div id="home" class="tab-content active">
       <div class="hero-section">
         <div class="hero-img-box">
@@ -45,10 +46,10 @@
       </div>
     </div>
 
-    <!-- PAGE 2: 選購指南 (第1層：填入圖一對比 / 第2層：藍線4大原則 / 徹底刪除黃線部分) -->
+    <!-- PAGE 2: 選購指南 (第 1 層：移入對比區塊 | 第 2 層：4大避坑原則 | 刪除所有商品卡片) -->
     <div id="guide" class="tab-content">
       
-      <!-- 【第 1 層】：從首頁移過來的「為什麼選擇大里杙古法鹹菜？」對比區塊 -->
+      <!-- 【第 1 層】：原本在首頁下方的對比區塊，現已移至選購指南最頂端 -->
       <h2 class="section-title">為什麼選擇大里杙古法鹹菜？</h2>
       <div class="comparison-container">
         <div class="comp-card highlight">
@@ -69,7 +70,7 @@
         </div>
       </div>
 
-      <!-- 【第 2 層】：向下移動的「4大挑選避坑指南」 -->
+      <!-- 【第 2 層】：天然鹹菜選購與挑選指南 -->
       <h2 class="section-title" style="margin-top: 40px;">天然鹹菜選購與挑選指南</h2>
       <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">市場鹹菜千百種，如何挑選無化學添加、真發酵的優質鹹菜？請看以下 4 大實用重點：</p>
 
@@ -96,10 +97,9 @@
         </div>
       </div>
 
-      <!-- 原黃線部分已全部刪除，避免與購物頁面重複 -->
     </div>
 
-    <!-- PAGE 3: 認識鹹菜 (文化專區) -->
+    <!-- PAGE 3: 認識鹹菜 -->
     <div id="history" class="tab-content">
       <div class="history-banner">
         <span class="hero-tag">百年文化 ‧ 在地記憶</span>
@@ -132,7 +132,7 @@
       </div>
     </div>
 
-    <!-- PAGE 4: 料理食譜 -->
+    <!-- PAGE 4: 料理食譜 (按鈕名稱統一，全數移除 10kg 桶裝選項) -->
     <div id="recipes" class="tab-content">
       <h2 class="section-title">60年代古早味快速家常食譜</h2>
       <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">專為忙碌主婦/夫設計，準備簡單、時間短，快速端出好味道！</p>
@@ -143,172 +143,4 @@
           <div class="card-body">
             <span class="card-tag">備時 10 分鐘 ‧ 開胃小菜</span>
             <h3 class="card-title">🍲 1. 經典開胃【辣炒鹹菜絲】</h3>
-            <p class="card-desc"><strong>食材：</strong>鹹菜 1 包、蒜頭、辣椒、少許糖與麻油[cite: 1]。</p>
-            <ol class="recipe-steps">
-              <li>鹹菜洗淨切細絲；蒜頭拍碎、辣椒切絲[cite: 1]。</li>
-              <li>熱鍋爆香蒜末，加入辣椒與鹹菜大火快炒[cite: 1]。</li>
-              <li>加 2 匙糖與少許醬油嗆香，起鍋前淋上麻油即可[cite: 1]。</li>
-            </ol>
-          </div>
-          <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購切片便利包</button>
-          </div>
-        </div>
-
-        <!-- 食譜 2 -->
-        <div class="card-item">
-          <div class="card-body">
-            <span class="card-tag">備時 25 分鐘 ‧ 暖胃湯品</span>
-            <h3 class="card-title">🍲 2. 暖胃首選【客家鹹菜鴨湯】</h3>
-            <p class="card-desc"><strong>食材：</strong>整株鹹菜半顆、鴨肉塊、薑片 5 片、米酒。</p>
-            <ol class="recipe-steps">
-              <li>鹹菜切段泡水備用；鴨肉川燙去血水。</li>
-              <li>鍋中加水放入鴨肉、薑片與米酒，燉煮 20 分鐘。</li>
-              <li>加入鹹菜段續煮 10 分鐘至香味融合即完成。</li>
-            </ol>
-          </div>
-          <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購整株手路鹹菜</button>
-          </div>
-        </div>
-
-        <!-- 食譜 3 -->
-        <div class="card-item">
-          <div class="card-body">
-            <span class="card-tag">備時 15 分鐘 ‧ 國民早餐</span>
-            <h3 class="card-title">🍙 3. 懷舊早餐【古早味鹹菜飯糰】</h3>
-            <p class="card-desc"><strong>食材：</strong>切片鹹菜、豬絞肉 50g、蒜末、白飯、油條。</p>
-            <ol class="recipe-steps">
-              <li>熱鍋豬絞肉炒出油，下蒜末與切碎鹹菜拌炒。</li>
-              <li>加糖與胡椒粉炒香至收汁，製成鹹菜肉燥。</li>
-              <li>將白飯鋪上鹹菜肉燥與油條，包成飯糰即完成。</li>
-            </ol>
-          </div>
-          <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購切片便利包</button>
-          </div>
-        </div>
-
-        <!-- 食譜 4 -->
-        <div class="card-item">
-          <div class="card-body">
-            <span class="card-tag">備時 10 分鐘 ‧ 下飯主菜</span>
-            <h3 class="card-title">🥩 4. 下飯神器【鹹菜炒豬肉片】</h3>
-            <p class="card-desc"><strong>食材：</strong>切片鹹菜、梅花豬肉片 150g、蒜頭、蔥段。</p>
-            <ol class="recipe-steps">
-              <li>豬肉切片，鹹菜洗淨切小片。</li>
-              <li>爆香蒜末與蔥白，下豬肉片拌炒至半熟。</li>
-              <li>放入鹹菜片大火快炒，加少許糖與米酒調味。</li>
-            </ol>
-          </div>
-          <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購切片便利包</button>
-          </div>
-        </div>
-
-        <!-- 食譜 5 -->
-        <div class="card-item">
-          <div class="card-body">
-            <span class="card-tag">備時 8 分鐘 ‧ 高纖輕食</span>
-            <h3 class="card-title">🥗 5. 清爽解膩【鹹菜炒毛豆仁】</h3>
-            <p class="card-desc"><strong>食材：</strong>鹹菜碎、冷凍毛豆仁、紅蘿蔔丁、蒜末。</p>
-            <ol class="recipe-steps">
-              <li>毛豆仁川燙備用；鹹菜切細碎末。</li>
-              <li>熱鍋爆香蒜末，下紅蘿蔔丁與毛豆仁翻炒。</li>
-              <li>加入鹹菜碎與少許水拌炒 2 分鐘即可起鍋。</li>
-            </ol>
-          </div>
-          <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購切片便利包</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PAGE 5: 線上商城 -->
-    <div id="shop" class="tab-content">
-      <h2 class="section-title">大里杙鹹菜線上商城</h2>
-      
-      <div class="grid-layout">
-        <div class="card-item">
-          <div class="card-img-box">
-            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="整株鹹菜">
-          </div>
-          <div class="card-body">
-            <span class="card-tag">家庭燉湯首選</span>
-            <h3 class="card-title">【傳統木桶】大里手路鹹菜（整株裝）</h3>
-            <p class="card-desc">傳統大木桶天然發酵，保有整株芥菜纖維與甘甜香氣。</p>
-          </div>
-          <div class="card-footer">
-            <span class="card-price">NT$ 150</span>
-            <button class="btn-primary" onclick="addToCart('整株鹹菜')">加入購物車</button>
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-img-box">
-            <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=600&q=80" alt="切片便利包">
-          </div>
-          <div class="card-body">
-            <span class="card-tag">快炒飯糰便利</span>
-            <h3 class="card-title">【切片便利包】古早味酸菜片（300g）</h3>
-            <p class="card-desc">預先清洗與薄切退鹽，料理方便，炒肉絲或炒糖超對味。</p>
-          </div>
-          <div class="card-footer">
-            <span class="card-price">NT$ 120</span>
-            <button class="btn-primary" onclick="addToCart('切片便利包')">加入購物車</button>
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-img-box">
-            <img src="https://images.unsplash.com/photo-1506484381205-f7945653044d?auto=format&fit=crop&w=600&q=80" alt="營業桶裝">
-          </div>
-          <div class="card-body">
-            <span class="card-tag">B2B 餐飲批發</span>
-            <h3 class="card-title">【小吃攤營業用】大里鹹菜桶裝（10kg）</h3>
-            <p class="card-desc">適合牛肉麵店、爌肉飯攤位，耐煮耐熬，湯頭回甘甜潤。</p>
-          </div>
-          <div class="card-footer">
-            <span class="card-price">NT$ 1200</span>
-            <button class="btn-primary" onclick="addToCart('10kg桶裝鹹菜')">加入購物車</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-  <footer class="footer">
-    <div class="footer-stamp">大里杙鹹菜 ‧ 溫暖謹製</div>
-    <p>門市體驗：台中市大里區新興路將軍二巷（鹹菜巷）</p>
-    <p>© 2026 大里杙鹹菜商業網站設計案</p>
-  </footer>
-
-  <script>
-    let cartCount = 0;
-
-    function switchTab(tabId) {
-      const contents = document.querySelectorAll('.tab-content');
-      contents.forEach(content => content.classList.remove('active'));
-
-      const targetContent = document.getElementById(tabId);
-      if (targetContent) {
-        targetContent.classList.add('active');
-      }
-
-      const buttons = document.querySelectorAll('.nav-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function addToCart(itemName) {
-      cartCount++;
-      document.getElementById('cartCount').innerText = cartCount;
-      alert(`已成功將「${itemName}」加入購物車！`);
-    }
-  </script>
-
-</body>
-</html>
+            <p class="card-desc"><strong>食材：</strong>鹹菜 1 包、蒜頭、辣椒、少許糖與麻油
