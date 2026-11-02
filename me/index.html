@@ -1,127 +1,181 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>甕裡乾坤 - 大里杙古法鹹菜</title>
-    <!-- 引入外接的 CSS 樣式表 -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大里杙鹹菜 - 民國60年代古法手路古早味</title>
+  <!-- 引入獨立樣式檔 -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-
-    <!-- 頂部復古招牌列 -->
-    <header class="vintage-header">
-        <div class="header-container">
-            <h1 class="brand-title">甕裡乾坤</h1>
-            <p class="brand-subtitle">大里杙・古法手作鹹菜</p>
-            <nav class="vintage-nav">
-                <a href="#about">歷史走讀</a>
-                <a href="#shop">嚴選商行</a>
-                <a href="#recipe">古早食譜</a>
-            </nav>
+  <div id="app">
+    <!-- 導覽列 -->
+    <header class="navbar">
+      <div class="nav-container">
+        <div class="brand-logo">
+          <span>大里杙鹹菜</span>
+          <span class="stamp-badge">60年代古法</span>
         </div>
+        <nav class="nav-links">
+          <button class="nav-btn" :class="{ active: currentTab === 'home' }" @click="currentTab = 'home'">首頁故事</button>
+          <button class="nav-btn" :class="{ active: currentTab === 'history' }" @click="currentTab = 'history'">大里走讀</button>
+          <button class="nav-btn" :class="{ active: currentTab === 'shop' }" @click="currentTab = 'shop'">線上商城</button>
+          <button class="nav-btn cart-btn" @click="currentTab = 'shop'">🛒 購物車 ({{ cartCount }})</button>
+        </nav>
+      </div>
     </header>
 
-    <!-- 主要內容區 -->
-    <main class="vintage-main">
-        
-        <!-- 品牌故事/Hero 區塊 -->
-        <section id="about" class="retro-section">
-            <div class="paper-card">
-                <h2>【 尋找大里杙的百年甕底香 】</h2>
-                <p>
-                    民國四、五十年代，大里曾以「鹹菜王國」名聞全台。冬至時節，家家戶戶於將軍二巷（鹹菜巷）利用大木桶以古法竹編與天然海鹽層層醃漬。
-                    歲月流轉，雖然工業化量產改變了市場，但我們依然堅持老祖宗傳承下來的手路——不用化學添加，只有時間與大木桶慢慢發酵的甘醇。
-                </p>
-            </div>
-        </section>
+    <main class="page-container">
+      <!-- 1. 首頁 (Home Tab) -->
+      <section v-if="currentTab === 'home'">
+        <!-- Hero 區塊 -->
+        <div class="hero-section">
+          <span class="hero-tag">百年歷史 ‧ 芥菜發酵靈魂</span>
+          <h1 class="hero-title">全台大埤產量第一，但最深厚的鹹菜靈魂在大里</h1>
+          <p class="hero-subtitle">重現民國60年代將軍二巷「鹹菜巷」的大木桶天然醃漬風味。無化學添加，煮湯、炒菜、包飯糰的靈魂夥伴。</p>
+          <button class="btn-retro" @click="currentTab = 'shop'">選購大里手路鹹菜</button>
+        </div>
 
-        <!-- 嚴選商城區塊 -->
-        <section id="shop" class="retro-section">
-            <h2 class="section-title">－ 柑仔店嚴選良品 －</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <h3>古法手作客家酸菜</h3>
-                    <p class="price">特價 NT$ 180</p>
-                    <p class="desc">傳統大木桶發酵，氣味芳香、天然回甘。</p>
-                    <button class="retro-btn" onclick="addToCart('古法手作客家酸菜', 180)">放入竹籃</button>
-                </div>
-                <div class="product-card">
-                    <h3>減鹽開袋即煮包</h3>
-                    <p class="price">特價 NT$ 220</p>
-                    <p class="desc">符合現代人健康低鈉，免洗切直接下鍋。</p>
-                    <button class="retro-btn" onclick="addToCart('減鹽開袋即煮包', 220)">放入竹籃</button>
-                </div>
-                <div class="product-card">
-                    <h3>大里古法鹹菜禮盒</h3>
-                    <p class="price">特價 NT$ 580</p>
-                    <p class="desc">送禮自用兩相宜，重現昔日大里杙風華。</p>
-                    <button class="retro-btn" onclick="addToCart('大里古法鹹菜禮盒', 580)">放入竹籃</button>
-                </div>
-            </div>
-        </section>
+        <!-- 痛點對比模組：大里古法 vs 市售量產 -->
+        <h2 class="section-title">為什麼選擇大里杙手路鹹菜？</h2>
+        <div class="comparison-container">
+          <div class="comp-card highlight">
+            <span class="comp-badge">堅持古法</span>
+            <div class="comp-header" style="color: var(--pickle-green);">🧅 大里杙古法鹹菜</div>
+            <ul class="comp-list">
+              <li>✅ <strong>天然大木桶發酵：</strong>遵循傳統踏壓，帶有淡淡木香與發酵香。</li>
+              <li>✅ <strong>酸鹹回甘層次：</strong>不死鹹、不刺鼻，煮湯能完全釋放甘甜。</li>
+              <li>✅ <strong>無防腐劑添加：</strong>純鹽與時間發酵，適合全家大小健康食用。</li>
+            </ul>
+          </div>
+          <div class="comp-card">
+            <div class="comp-header" style="color: var(--text-muted);">🏭 一般市售量產酸菜</div>
+            <ul class="comp-list">
+              <li>❌ <strong>水泥池快速發酵：</strong>缺乏木桶熟成韻味，風味較單一。</li>
+              <li>❌ <strong>鹹味死板化學酸：</strong>需經過多次沖洗去鹽，口感易軟爛。</li>
+              <li>❌ <strong>化學防腐劑添加：</strong>為了保存期限長，常添加防腐劑。</li>
+            </ul>
+          </div>
+        </div>
 
-        <!-- 食譜分享區塊 -->
-        <section id="recipe" class="retro-section">
-            <div class="paper-card">
-                <h2>【 灶咖好滋味：古早味鹹菜鴨湯 】</h2>
-                <p>材料：大里古法鹹菜半包、半隻土鴨肉、老薑片數片、米酒少許。</p>
-                <p>作法：將鹹菜洗淨切段，與汆燙好的鴨肉、薑片一同入鍋慢火燉煮 1 小時，起鍋前加少許米酒。湯頭酸香甘甜，是台中人記憶中最懷念的家鄉味。</p>
+        <!-- 精選商品預覽 -->
+        <h2 class="section-title">大里經典鹹菜系列</h2>
+        <div class="product-grid">
+          <div class="product-card" v-for="item in featuredProducts" :key="item.id">
+            <div>
+              <span class="product-tag">{{ item.tag }}</span>
+              <h3 class="product-title">{{ item.name }}</h3>
+              <p class="product-desc">{{ item.desc }}</p>
             </div>
-        </section>
+            <div>
+              <div class="product-price">NT$ {{ item.price }}</div>
+              <button class="btn-retro btn-green" style="width: 100%;" @click="addToCart(item)">加入購物車</button>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- 2. 大里走讀與歷史 (History Tab) -->
+      <section v-if="currentTab === 'history'">
+        <div class="hero-section" style="padding: 25px;">
+          <h1 class="hero-title">大里杙鹹菜巷的歲月故事</h1>
+          <p class="hero-subtitle">走進將軍二巷，尋找民國40-60年代全台「鹹菜王國」的輝煌記憶。</p>
+        </div>
+
+        <h2 class="section-title">大里鹹菜歷史演進</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">清代 ~ 日治時期</div>
+            <div class="timeline-title">大里杙碼頭與芥菜種植</div>
+            <p>大里位於水路要衝（六大里杙），農民利用冬作空檔種植大芥菜，開啟了木桶醃漬鹹菜的傳統。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">民國 40 ~ 50 年代</div>
+            <div class="timeline-title">鼎盛時期：鹹菜王國</div>
+            <p>家家戶戶滿滿的大木桶與水泥池，將軍二巷被親切稱為「鹹菜巷」，產品遠銷全台。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">民國 53 年與現代</div>
+            <div class="timeline-title">轉型與手路精神傳承</div>
+            <p>雖經歷病害與工廠化衝擊，少數老戶依然堅守木桶傳統發酵，將這份古早味完好保留。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 線上商城與食譜 (Shop Tab) -->
+      <section v-if="currentTab === 'shop'">
+        <h2 class="section-title">鹹菜產品線上選購</h2>
+        <div class="product-grid">
+          <div class="product-card" v-for="item in allProducts" :key="item.id">
+            <div>
+              <span class="product-tag">{{ item.tag }}</span>
+              <h3 class="product-title">{{ item.name }}</h3>
+              <p class="product-desc">{{ item.desc }}</p>
+            </div>
+            <div>
+              <div class="product-price">NT$ {{ item.price }}</div>
+              <button class="btn-retro btn-green" style="width: 100%;" @click="addToCart(item)">加入購物車</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 鹹菜入菜食譜 -->
+        <h2 class="section-title">60年代古早味食譜卡</h2>
+        <div class="recipe-grid">
+          <div class="recipe-card">
+            <h3 class="recipe-title">🍲 經典客家鹹菜鴨湯</h3>
+            <p><strong>作法：</strong>將大里切片鹹菜與老鴨切塊，加入薑絲燉煮40分鐘。鹹菜甘甜融入鴨湯，溫潤回甘。</p>
+          </div>
+          <div class="recipe-card">
+            <h3 class="recipe-title">🍙 懷舊傳統鹹菜飯糰</h3>
+            <p><strong>作法：</strong>大里鹹菜乾切碎與蒜末、糖稍微炒香，包裹於糯米飯中，加入油條與滷蛋，口感豐富美味。</p>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- 購物車側邊欄/結帳區 -->
-    <aside class="cart-sidebar">
-        <h3>🛒 您的買菜竹籃</h3>
-        <ul id="cart-items">
-            <li>尚無挑選商品</li>
-        </ul>
-        <div class="cart-total">
-            <span>總計：</span><span id="total-price">NT$ 0</span>
-        </div>
-        <button class="retro-btn checkout-btn" onclick="checkout()">確認結帳取貨</button>
-    </aside>
-
-    <!-- 復古頁尾 -->
-    <footer class="vintage-footer">
-        <p>台灣省台中縣大里鄉（今大里區）將軍二巷 ｜ 傳統手路．代代相傳</p>
-        <p>示範網站：本站為地方文史與地方創生商業網頁展示</p>
+    <!-- 頁尾 -->
+    <footer class="footer">
+      <div class="footer-stamp">大里杙鹹菜 ‧ 謹製</div>
+      <p>地址：台中市大里區新興路將軍二巷（鹹菜巷）</p>
+      <p>© 2026 大里杙鹹菜商業網站設計案 專用雛型</p>
     </footer>
+  </div>
 
-    <!-- 簡單的互動 JavaScript -->
-    <script>
-        let cart = [];
-        let total = 0;
+  <script>
+    const { createApp, ref, computed } = Vue;
 
-        function addToCart(name, price) {
-            cart.push({ name, price });
-            total += price;
-            updateCartUI();
-        }
+    createApp({
+      setup() {
+        const currentTab = ref('home');
+        const cart = ref([]);
 
-        function updateCartUI() {
-            const list = document.getElementById('cart-items');
-            const totalSpan = document.getElementById('total-price');
-            if (cart.length === 0) {
-                list.innerHTML = '<li>尚無挑選商品</li>';
-            } else {
-                list.innerHTML = cart.map(item => `<li>${item = item.name} - NT$ ${item.price}</li>`).join('');
-            }
-            totalSpan.innerText = `NT$ ${total}`;
-        }
+        const allProducts = ref([
+          { id: 1, name: '【傳統木桶】大里手路鹹菜（整株裝）', price: 150, tag: '家庭煮婦首選', desc: '傳統木桶天然發酵，酸香層次豐富，燉湯、燉肉靈魂主角。' },
+          { id: 2, name: '【切片便利包】古早味酸菜片（300g）', price: 120, tag: '輕鬆下廚', desc: '已清洗切片，退鹽處理，打開即可直接下鍋煮鹹菜鴨湯。' },
+          { id: 3, name: '【小吃攤營業用】大里鹹菜桶裝（10kg）', price: 1200, tag: 'B2B 餐飲批發', desc: '適合牛肉麵店、飯糰攤、爌肉飯業者，品質穩定風味極佳。' }
+        ]);
 
-        function checkout() {
-            if (cart.length === 0) {
-                alert('您的竹籃是空的唷！');
-            } else {
-                alert(`感謝您的惠顧！總金額 NT$ ${total}，已通知大里老店準備出貨。`);
-                cart = [];
-                total = 0;
-                updateCartUI();
-            }
-        }
-    </script>
+        const featuredProducts = computed(() => allProducts.value.slice(0, 2));
+
+        const addToCart = (product) => {
+          cart.value.push(product);
+          alert(`已將「${product.name}」加入購物車！`);
+        };
+
+        const cartCount = computed(() => cart.value.length);
+
+        return {
+          currentTab,
+          allProducts,
+          featuredProducts,
+          addToCart,
+          cartCount
+        };
+      }
+    }).mount('#app');
+  </script>
 </body>
 </html>
