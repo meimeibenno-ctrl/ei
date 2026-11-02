@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- 全站固定頂部導覽列 -->
+  <!-- 頂部導覽列 -->
   <header class="navbar">
     <div class="nav-container">
       <div class="brand-logo">
@@ -25,7 +25,6 @@
     </div>
   </header>
 
-  <!-- 內容主區域 -->
   <main class="page-container">
 
     <!-- PAGE 1: 網站首頁 -->
@@ -39,7 +38,7 @@
           <h1 class="hero-title">歲月慢熟的古法香氣，大里杙鹹菜巷的溫暖手路</h1>
           <p class="hero-subtitle">重現民國60年代將軍二巷「鹹菜巷」天然醃漬風味。無化學添加，煮湯炒菜的溫馨靈魂夥伴。</p>
           <div class="hero-actions">
-            <!-- 修復圖四：按鈕樣式互換，「選購指南」為主要紅磚按鈕，「選購大里鹹菜」為次要按鈕 -->
+            <!-- 【圖四修正】按鈕樣式互換：「選購指南」為主要紅磚按鈕，「選購大里鹹菜」為次要按鈕 -->
             <button class="btn-primary" onclick="switchTab('guide')">選購指南 ➔</button>
             <button class="btn-secondary" onclick="switchTab('shop')">選購大里鹹菜</button>
           </div>
@@ -67,12 +66,11 @@
       </div>
     </div>
 
-    <!-- PAGE 2: 選購指南 (修復圖三：不再與商城重複，增加專業挑選避坑技巧) -->
+    <!-- PAGE 2: 選購指南 【圖三修復】：改為實用挑選技巧百科，不再重複放商品圖片與賣場卡片 -->
     <div id="guide" class="tab-content">
-      <h2 class="section-title">天然鹹菜選購與挑選指南</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">市場鹹菜千百種，如何挑出無添加、真發酵的古早味？掌握4大原則不踩雷：</p>
-      
-      <!-- 實用挑選技巧圖卡 -->
+      <h2 class="section-title">天然鹹菜挑選與避坑指南</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">市場上的鹹菜品質參差不齊，如何挑選無化學添加、真發酵的優質鹹菜？請看以下 4 大實用重點：</p>
+
       <div class="guide-tip-grid">
         <div class="guide-tip-card">
           <div class="guide-tip-icon">👁️</div>
@@ -96,33 +94,27 @@
         </div>
       </div>
 
-      <h2 class="section-title" style="margin-top: 40px;">家庭下廚：切法與規格挑選建議</h2>
+      <h2 class="section-title" style="margin-top: 40px;">家庭下廚建議：切法與規格怎麼選？</h2>
       <div class="grid-layout">
         <div class="card-item">
-          <div class="card-img-box">
-            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="整株鹹菜">
-          </div>
           <div class="card-body">
             <span class="card-tag">燉湯慢煮推薦</span>
             <h3 class="card-title">【整株裝】傳統木桶鹹菜</h3>
             <p class="card-desc">保留全株葉片與木桶精華，釋放速度慢，適合燉鴨湯、煮酸菜白肉鍋，耐久煮越滾越香。</p>
           </div>
           <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">查看線上商城規格 ➔</button>
+            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">前往線上商城選購 ➔</button>
           </div>
         </div>
 
         <div class="card-item">
-          <div class="card-img-box">
-            <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=600&q=80" alt="切片便利包">
-          </div>
           <div class="card-body">
             <span class="card-tag">快速下廚推薦</span>
             <h3 class="card-title">【切片裝】古早味酸菜片</h3>
             <p class="card-desc">已清洗去鹽並薄切處理，適合忙碌主婦/夫快炒肉絲、夾刈包、拌麵或製作古早味飯糰。</p>
           </div>
           <div class="card-footer">
-            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">查看線上商城規格 ➔</button>
+            <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">前往線上商城選購 ➔</button>
           </div>
         </div>
       </div>
@@ -161,7 +153,7 @@
       </div>
     </div>
 
-    <!-- PAGE 4: 料理食譜 (修復圖二：統一按鈕名詞，移除桶裝鹹菜) -->
+    <!-- PAGE 4: 料理食譜 【圖二修復】：按鈕名詞統一一律為「切片便利包」或「整株手路鹹菜」，且完全剔除 10kg B2B 桶裝 -->
     <div id="recipes" class="tab-content">
       <h2 class="section-title">60年代古早味快速家常食譜</h2>
       <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">專為忙碌主婦/夫設計，準備簡單、時間短，快速端出好味道！</p>
@@ -180,7 +172,6 @@
             </ol>
           </div>
           <div class="card-footer">
-            <!-- 統一名詞 -->
             <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購切片便利包</button>
           </div>
         </div>
@@ -198,7 +189,6 @@
             </ol>
           </div>
           <div class="card-footer">
-            <!-- 統一名詞 -->
             <button class="btn-primary" style="width: 100%;" onclick="switchTab('shop')">🛒 選購整株手路鹹菜</button>
           </div>
         </div>
@@ -256,7 +246,7 @@
       </div>
     </div>
 
-    <!-- PAGE 5: 線上商城 (修復圖一：卡片圖片尺寸完全統一) -->
+    <!-- PAGE 5: 線上商城 【圖一修復】：商品圖片設定 220px 統一固定高度 + object-fit: cover 防爆尺寸 -->
     <div id="shop" class="tab-content">
       <h2 class="section-title">大里杙鹹菜線上商城</h2>
       
@@ -310,7 +300,7 @@
 
   </main>
 
-  <!-- 全站固定頁尾 -->
+  <!-- 頁尾 -->
   <footer class="footer">
     <div class="footer-stamp">大里杙鹹菜 ‧ 溫暖謹製</div>
     <p>門市體驗：台中市大里區新興路將軍二巷（鹹菜巷）</p>
@@ -321,21 +311,17 @@
     let cartCount = 0;
 
     function switchTab(tabId) {
-      // 隱藏所有頁面內容
       const contents = document.querySelectorAll('.tab-content');
       contents.forEach(content => content.classList.remove('active'));
 
-      // 顯示目標頁面
       const targetContent = document.getElementById(tabId);
       if (targetContent) {
         targetContent.classList.add('active');
       }
 
-      // 更新導覽按鈕高亮
       const buttons = document.querySelectorAll('.nav-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
       
-      // 平滑滾動到頁首
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
