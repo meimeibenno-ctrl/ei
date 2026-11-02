@@ -1,20 +1,20 @@
 /* ==========================================================================
-   大里杙鹹菜 - 民國60年代懷舊溫暖風格 (style.css)
+   大里杙鹹菜 - 民國60年代懷舊溫暖風格 (style.css 跑版修復版)
    ========================================================================== */
 
 :root {
-  --bg-warm-paper: #FDF9F0;    /* 溫暖人情味暖杏宣紙色 */
-  --bg-card: #FFFFFF;          /* 純白卡片襯底 */
-  --brick-red: #A83232;        /* 台灣古厝溫暖紅磚色 */
-  --wood-brown: #7A4B29;       /* 醃漬大木桶棕 */
-  --pickle-green: #2E6027;     /* 鹹菜芥菜綠 */
-  --warm-gold: #D9822B;        /* 暖陽金黃 */
-  --text-dark: #2D2623;        /* 溫潤深褐字體 */
-  --text-muted: #665C54;       /* 淺褐灰色字體 */
-  --border-color: #8C6F56;     /* 溫暖木質邊框 */
+  --bg-warm-paper: #FDF9F0;    /* 溫暖宣紙杏色 */
+  --bg-card: #FFFFFF;          /* 純白卡片 */
+  --brick-red: #9E2A2B;        /* 台灣古厝老紅磚色 */
+  --wood-brown: #6B4423;       /* 木桶棕 */
+  --pickle-green: #2D5A27;     /* 鹹菜芥菜綠 */
+  --warm-gold: #D97706;        /* 懷舊金黃 */
+  --text-dark: #2B2625;        /* 懷舊墨黑文字 */
+  --text-muted: #665E59;       /* 淺墨色文字 */
+  --border-color: #8C6F56;     /* 邊框木質色 */
 }
 
-/* 全局重置 */
+/* 全局重置與防爆設定 */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,16 +30,21 @@ body {
   background-size: 20px 20px;
 }
 
-/* 頂部固定導覽列 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 頂部導覽列 (清晰高對比文字) */
 .navbar {
-  background-color: var(--brick-red);
+  background-color: var(--brick-red) !important;
   border-bottom: 4px solid var(--wood-brown);
-  color: #FFF;
-  padding: 0.8rem 1.5rem;
+  padding: 12px 20px;
   position: sticky;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 4px 12px rgba(122, 75, 41, 0.2);
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .nav-container {
@@ -49,21 +54,22 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
 }
 
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.4rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #FFFFFF !important;
   letter-spacing: 2px;
 }
 
 .stamp-badge {
   background-color: var(--warm-gold);
-  color: #FFF;
+  color: #FFFFFF !important;
   padding: 2px 8px;
   font-size: 0.85rem;
   border-radius: 4px;
@@ -72,41 +78,42 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .nav-btn {
-  background: transparent;
+  background-color: transparent;
   border: 2px solid transparent;
-  color: #FFFDF9;
-  padding: 6px 14px;
-  font-size: 0.95rem;
+  color: #FFFFFF !important; /* 強制超清晰白字 */
+  padding: 8px 16px;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.2s;
   border-radius: 4px;
+  transition: all 0.2s;
 }
 
 .nav-btn:hover, .nav-btn.active {
-  background-color: var(--wood-brown);
-  border-color: #FFF;
+  background-color: var(--wood-brown) !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
 }
 
 .cart-btn {
-  background-color: var(--pickle-green);
-  border: 2px solid #FFF;
+  background-color: var(--pickle-green) !important;
+  border: 2px solid #FFFFFF !important;
 }
 
 /* 頁面通用容器 */
 .page-container {
   max-width: 1100px;
-  margin: 25px auto;
-  padding: 0 15px;
+  margin: 30px auto;
+  padding: 0 20px;
   min-height: 70vh;
 }
 
-/* 分頁隱藏控制 (SPA切換) */
+/* 單頁面切換控制 */
 .tab-content {
   display: none;
 }
@@ -114,17 +121,17 @@ body {
   display: block;
 }
 
-/* Hero 區塊 */
+/* Hero 區塊 (限制圖片防爆版) */
 .hero-section {
   background-color: var(--bg-card);
   border: 3px double var(--brick-red);
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(122, 75, 41, 0.08);
+  box-shadow: 0 6px 18px rgba(107, 68, 35, 0.1);
   margin-bottom: 35px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  gap: 30px;
   align-items: center;
 }
 
@@ -134,20 +141,26 @@ body {
   }
 }
 
-.hero-img {
+.hero-img-box {
   width: 100%;
-  height: 280px;
-  object-fit: cover;
+  max-height: 320px;
+  overflow: hidden;
   border-radius: 8px;
   border: 3px solid var(--wood-brown);
   box-shadow: 4px 4px 0px var(--brick-red);
+}
+
+.hero-img-box img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
 }
 
 .hero-tag {
   display: inline-block;
   background-color: var(--pickle-green);
   color: #FFF;
-  padding: 3px 12px;
+  padding: 4px 14px;
   font-size: 0.9rem;
   font-weight: bold;
   border-radius: 4px;
@@ -155,17 +168,18 @@ body {
 }
 
 .hero-title {
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   color: var(--brick-red);
-  margin-bottom: 12px;
-  font-weight: bold;
-  line-height: 1.35;
+  margin-bottom: 15px;
+  font-weight: 900;
+  line-height: 1.4;
 }
 
 .hero-subtitle {
   font-size: 1.05rem;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  line-height: 1.6;
 }
 
 .hero-actions {
@@ -177,15 +191,15 @@ body {
 /* 按鈕樣式 */
 .btn-primary {
   background-color: var(--brick-red);
-  color: #FFF;
+  color: #FFFFFF !important;
   border: 2px solid var(--wood-brown);
-  padding: 10px 24px;
+  padding: 10px 22px;
   font-size: 1.05rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 6px;
   box-shadow: 3px 3px 0px var(--wood-brown);
-  transition: transform 0.1s, box-shadow 0.1s;
+  transition: transform 0.1s;
 }
 
 .btn-primary:active {
@@ -201,10 +215,6 @@ body {
   cursor: pointer;
   background: none;
   border: none;
-}
-
-.btn-secondary:hover {
-  color: var(--brick-red);
 }
 
 .section-title {
@@ -232,7 +242,7 @@ body {
 .comp-card {
   background-color: var(--bg-card);
   border: 2px solid var(--border-color);
-  padding: 20px;
+  padding: 22px;
   border-radius: 8px;
 }
 
@@ -245,7 +255,7 @@ body {
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 12px;
-  padding-bottom: 6px;
+  padding-bottom: 8px;
   border-bottom: 2px dashed var(--border-color);
 }
 
@@ -258,11 +268,11 @@ body {
   font-size: 1rem;
 }
 
-/* 商品與食譜卡片網格 */
+/* 網格佈局與固定高卡片 */
 .grid-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 22px;
+  gap: 25px;
   margin-bottom: 40px;
 }
 
@@ -271,21 +281,27 @@ body {
   border: 2px solid var(--wood-brown);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(122, 75, 41, 0.1);
+  box-shadow: 0 4px 12px rgba(107, 68, 35, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.card-img {
+.card-img-box {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  overflow: hidden;
   border-bottom: 2px solid var(--wood-brown);
 }
 
+.card-img-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
 .card-body {
-  padding: 18px;
+  padding: 20px;
   flex-grow: 1;
 }
 
@@ -314,7 +330,7 @@ body {
 }
 
 .card-footer {
-  padding: 0 18px 18px 18px;
+  padding: 0 20px 20px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -331,15 +347,15 @@ body {
   color: var(--text-dark);
   padding-left: 18px;
   margin-top: 10px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* 認識鹹菜專區特別樣式 */
+/* 認識鹹菜文化專區 */
 .history-banner {
   background-color: var(--bg-card);
   border: 2px solid var(--wood-brown);
   border-radius: 10px;
-  padding: 25px;
+  padding: 30px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -354,7 +370,7 @@ body {
 .process-step {
   background-color: var(--bg-card);
   border: 2px dashed var(--brick-red);
-  padding: 18px;
+  padding: 20px;
   border-radius: 8px;
   text-align: center;
 }
@@ -365,7 +381,7 @@ body {
   font-weight: bold;
 }
 
-/* 頁尾 Footer */
+/* 頁尾 */
 .footer {
   background-color: var(--wood-brown);
   color: #FDF9F0;
