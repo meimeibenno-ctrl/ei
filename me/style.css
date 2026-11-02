@@ -1,5 +1,5 @@
 /* ==========================================================================
-   大里杙鹹菜 - 民國60年代懷舊溫暖風格 (style.css 精準修復版)
+   大里杙鹹菜 - 民國60年代懷舊溫暖風格 (style.css 修復版)
    ========================================================================== */
 
 :root {
@@ -36,7 +36,7 @@ img {
   display: block;
 }
 
-/* 頂部固定導覽列 */
+/* 頂部固定導覽列 (清晰高對比文字) */
 .navbar {
   background-color: var(--brick-red) !important;
   border-bottom: 4px solid var(--wood-brown);
@@ -113,7 +113,7 @@ img {
   min-height: 70vh;
 }
 
-/* SPA 單頁切換控制 */
+/* 單頁面切換控制 */
 .tab-content {
   display: none;
 }
@@ -121,7 +121,7 @@ img {
   display: block;
 }
 
-/* 首頁 Hero 區塊 */
+/* Hero 區塊 */
 .hero-section {
   background-color: var(--bg-card);
   border: 3px double var(--brick-red);
@@ -188,7 +188,7 @@ img {
   align-items: center;
 }
 
-/* 按鈕樣式 (修復圖四：主要按鈕與次要按鈕樣式互換) */
+/* 圖四修正：按鈕樣式互換 */
 .btn-primary {
   background-color: var(--brick-red);
   color: #FFFFFF !important;
@@ -275,7 +275,7 @@ img {
   font-size: 1rem;
 }
 
-/* 網格佈局與修復圖一：卡片圖片尺寸完全統一 */
+/* 網格佈局與修復圖一：卡片圖片尺寸完全統一 (220px 裁切) */
 .grid-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -294,10 +294,9 @@ img {
   justify-content: space-between;
 }
 
-/* 圖一修復點：精確固定圖片容器高度與 cover 裁切 */
 .card-img-box {
   width: 100%;
-  height: 220px !important; /* 統一固定高度 */
+  height: 220px !important;
   overflow: hidden;
   border-bottom: 2px solid var(--wood-brown);
   background-color: #F3EFE6;
@@ -305,8 +304,8 @@ img {
 
 .card-img-box img {
   width: 100%;
-  height: 220px !important; /* 統一固定高度 */
-  object-fit: cover !important; /* 確保不變形、中央裁切 */
+  height: 220px !important;
+  object-fit: cover !important;
 }
 
 .card-body {
@@ -359,7 +358,7 @@ img {
   line-height: 1.7;
 }
 
-/* 修復圖三：選購指南專用實用知識卡片樣式 */
+/* 圖三專用：選購指南挑選技巧卡片樣式 */
 .guide-tip-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -385,37 +384,6 @@ img {
   color: var(--brick-red);
   font-weight: bold;
   margin-bottom: 8px;
-}
-
-/* 認識鹹菜文化專區 */
-.history-banner {
-  background-color: var(--bg-card);
-  border: 2px solid var(--wood-brown);
-  border-radius: 10px;
-  padding: 30px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-  margin: 25px 0 35px;
-}
-
-.process-step {
-  background-color: var(--bg-card);
-  border: 2px dashed var(--brick-red);
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.step-num {
-  font-size: 1.5rem;
-  color: var(--brick-red);
-  font-weight: bold;
 }
 
 /* 頁尾 */
