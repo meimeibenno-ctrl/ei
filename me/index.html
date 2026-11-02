@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>大里杙鹹菜 - 60年代古法溫暖手路風味</title>
+  <title>大里鹹菜 - 60年代古法溫暖風味</title>
   <!-- 引入獨立樣式檔 -->
   <link rel="stylesheet" href="style.css">
   <!-- Vue 3 CDN -->
@@ -35,7 +35,7 @@
           <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" alt="傳統大木桶與芥菜醃漬" class="hero-img">
           <div class="hero-content">
             <span class="hero-tag">百年歷史 ‧ 木桶發酵</span>
-            <h1 class="hero-title">全台大埤產量第一，但最深厚的鹹菜靈魂在大里</h1>
+            <h1 class="hero-title">木桶醃漬的歲月韻味，重現大里將軍二巷的古早味。</h1>
             <p class="hero-subtitle">重現民國60年代將軍二巷「鹹菜巷」天然醃漬風味。無化學添加，煮湯炒菜的靈魂夥伴。</p>
             <div class="hero-actions">
               <!-- 按鈕文案依指示極簡化 -->
@@ -45,7 +45,7 @@
           </div>
         </div>
 
-        <h2 class="section-title">為什麼選擇大里杙古法鹹菜？</h2>
+        <h2 class="section-title">為什麼選擇大里古法鹹菜？</h2>
         <div class="comparison-container">
           <div class="comp-card highlight">
             <div class="comp-header" style="color: var(--pickle-green);">🧅 大里杙古法鹹菜</div>
@@ -116,7 +116,7 @@
 
       <!-- 5. 線上商城 (Shop Tab) - 具備每一項商品圖片 -->
       <section v-if="currentTab === 'shop'">
-        <h2 class="section-title">大里杙鹹菜線上選購</h2>
+        <h2 class="section-title">大里鹹菜線上選購</h2>
         <div class="product-grid">
           <div class="product-card" v-for="item in allProducts" :key="item.id">
             <img :src="item.img" :alt="item.name" class="product-img">
